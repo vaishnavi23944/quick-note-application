@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple Quick Note application to create, search, edit and delete notes.">
+  <title>Quick Note | Your simple notes space</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon" aria-hidden="true">✎</div>
+        <div>
+          <h1>Quick Note</h1>
+          <p>Your thoughts, neatly organized.</p>
+        </div>
+      </div>
+      <button id="new-note-top" class="button button-primary" type="button">＋ New note</button>
+    </header>
+
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">YOUR PERSONAL SPACE</p>
+        <h2>Make room for your <span>ideas.</span></h2>
+        <p class="welcome-copy">Capture a thought before it slips away.</p>
+      </div>
+      <div class="welcome-art" aria-hidden="true">
+        <div class="art-note art-note-one">Little ideas<br>become big things.</div>
+        <div class="art-note art-note-two">✦</div>
+      </div>
+    </section>
+
+    <section class="toolbar" aria-label="Notes controls">
+      <label class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <input id="search" type="search" placeholder="Search your notes..." aria-label="Search notes">
+      </label>
+      <span id="notes-count" class="notes-count">0 notes</span>
+    </section>
+
+    <section id="note-form-section" class="note-form-card" hidden>
+      <form id="note-form">
+        <div class="form-heading">
+          <h3 id="form-heading">Create a note</h3>
+          <button id="cancel-form" class="icon-button" type="button" aria-label="Close form">×</button>
+        </div>
+        <label for="note-title">Title</label>
+        <input id="note-title" maxlength="80" placeholder="Give your note a title" required>
+        <label for="note-content">Your note</label>
+        <textarea id="note-content" rows="5" maxlength="5000" placeholder="Write something worth remembering..." required></textarea>
+        <div class="form-footer">
+          <span id="form-message" class="form-message">Your notes are saved in this browser.</span>
+          <button class="button button-primary" type="submit" id="save-note">Save note</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="notes-grid" class="notes-grid" aria-live="polite"></section>
+    <section id="empty-state" class="empty-state">
+      <div class="empty-icon" aria-hidden="true">✧</div>
+      <h3>No notes yet</h3>
+      <p>Create your first note and keep your ideas close.</p>
+      <button id="empty-new-note" class="button button-primary" type="button">＋ Create your first note</button>
+    </section>
+
+    <footer>
+      <span>Made with care, one note at a time.</span>
+      <span>Quick Note · <span id="year"></span></span>
+    </footer>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
